@@ -7,3 +7,28 @@ some file that need to change are
 controller, 
 route 
 views file 
+controller file: 
+
+\Mail::send(
+         'frontend.emails.send-mail', // view file name with folder name
+         array( // Send data to view file as parameters 
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'text' => $request->message,
+         ),
+         function ($message) use ($request) {
+            $message->from($request->email);
+            $message->to([$request->email, 'from@gmail.com'])->subject('Customer Message');
+         }
+      );
+      
+ and in view file 
+ send-mail 
+ {{ name }}
+ will call 
+ and most important for changing env file 
+
+MAIL_MAILER=sendmail
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
