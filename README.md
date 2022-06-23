@@ -32,3 +32,14 @@ controller file:
 MAIL_MAILER=sendmail
 MAIL_HOST=smtp.gmail.com
 MAIL_PORT=587
+ @foreach($services->chunk(2) as $service)
+            <div class="row mb-4 service_ul">
+                @foreach($service as $serv)
+                <div class="col-md-6">
+                    <h4><span style="font-family: inherit; font-weight: normal;"> <strong>{{ $serv->service_name }} </strong> </span></h4>
+                    {!! $serv->description !!}
+                    <p><img src="{{asset('img/safeaviation/'.$serv->image)}}" alt="Image" style="width:400px;height:300px;" /></p>
+                </div>
+                @endforeach
+            </div>
+        @endforeach   
