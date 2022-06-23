@@ -38,7 +38,7 @@ MAIL_PORT=587
                 <div class="col-md-6">
                     <h4><span style="font-family: inherit; font-weight: normal;"> <strong>{{ $serv->service_name }} </strong> </span></h4>
                     {!! $serv->description !!}
-                    <p><img src="{{asset('img/safeaviation/'.$serv->image)}}" alt="Image" style="width:400px;height:300px;" /></p>
+                    <p><img src="{{asset('imgpag")}}" alt="Image" style="width:400px;height:300px;" /></p>
                 </div>
                 @endforeach
             </div>
